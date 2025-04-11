@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | EventHub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/home.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">EventHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="../html/index.html#pills-register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-4 mb-4 fw-bold">Welcome to Event Hub <br> Your Campus, Your Events, Your Hub!</h1>
+                    <p class="lead mb-5">Discover, connect, and engage with all the exciting events happening on campus! Join now and never miss out on what your university has to offer!</p>
+                    <a href="../html/index.html" class="btn btn-primary btn-lg btn-register">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">About Us</h2>
+                    <p class="lead">Event Hub is a dynamic university event management platform designed to keep students, faculty, and organizations connected. Think of it as a social hub where event organizers can post updates, share details, and interact with attendees—all in one place. <br>
+                    Our mission is to enhance student engagement by providing an easy-to-use, interactive space where you can explore, RSVP, and participate in university events effortlessly.</p>
+                    <p class="lead  fw-bold">Stay connected. Stay informed. Stay engaged—with Event Hub!</p>
+                    <div class="d-flex mt-4">
+                        <div class="pe-4">
+                            <h3 class="fw-bold">✅100%</h3>
+                            <p>Free & Easy to Use</p>
+                        </div>
+                        <div class="pe-4">
+                            <h3 class="fw-bold">📅24/7</h3>
+                            <p>Access and Updates</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/landingpage_officeimg.jpg" alt="Our office" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-5">Get In Touch</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <i class="bi bi-geo-alt-fill fs-1 text-primary mb-3"></i>
+                                <h4>Address</h4>
+                                <p>17 Event Street, Mandeville, Manchester, Jamaica</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <i class="bi bi-telephone-fill fs-1 text-primary mb-3"></i>
+                                <h4>Phone</h4>
+                                <p>(876) 456-7890</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <i class="bi bi-envelope-fill fs-1 text-primary mb-3"></i>
+                                <h4>Email</h4>
+                                <p>the.event.hub.team@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <p class="mb-0">© 2025 Event Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize scrollspy
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '.navbar',
+            offset: 100
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* Base Styles */
+body {
+    background-color: #e5f1fd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box .form-control {
+    padding-left: 2.5rem;
+    border-radius: 20px;
+}
+
+.form-control::placeholder{
+    color: black;
+}
+
+#searchInput {
+    color: black;
+    border-color: #062687;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* Event Cards */
+.event-card {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.event-meta {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+/* Empty State */
+.empty-state {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-box {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .event-image {
+        height: 160px;
+    }
+}

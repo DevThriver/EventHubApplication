@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register | EventHub</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/loginandregister.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../html/home.html">EventHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/home.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="../html/index.html#pills-register" data-bs-toggle="pill">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="wrapper">
+    <div class="auth-container">
+        <div class="form-container">
+            <!-- Pills Navigation -->
+            <ul class="nav nav-pills nav-justified mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-login" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-register" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab">
+                        <i class="bi bi-person-plus me-2"></i>Register
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Pills Content -->
+            <div class="tab-content">
+                <!-- Login Form -->
+                <div class="tab-pane fade show active" id="pills-login" role="tabpanel">
+                    <form action="/php/login.php" method="POST">
+                        <div class="text-center mb-4">
+                            <p class="text-muted">Sign in with:</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <button type="button" class="btn btn-outline-danger btn-floating">
+                                    <i class="fab fa-google"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center text-muted mx-3 mb-0">or</p>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" id="loginName" class="form-control" placeholder="Email or Username" required />
+                            <label for="loginName">Email or Username</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" id="loginPassword" class="form-control" placeholder="Password" required />
+                            <label for="loginPassword">Password</label>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="loginCheck" checked />
+                                <label class="form-check-label" for="loginCheck" style="color: rgb(68, 68, 68);">Remember me</label>
+                            </div>
+                            <a href="../php/forgot_password.php" class="text-primary">Forgot password?</a>
+                        </div>
+
+                        <div class="text-center mb-3">
+                            <button type="submit" class="btn btn-primary">
+                                Sign in
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <p style="color: rgb(68, 68, 68);">Not a member? <a href="#pills-register" data-bs-toggle="pill" class="text-primary fw-bold text-center">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="tab-pane fade" id="pills-register" role="tabpanel">
+                    <form action="/php/register.php" method="POST" id="registrationForm">
+                        <div class="text-center mb-4">
+                            <p class="text-muted">Sign up with:</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <button type="button" class="btn btn-outline-danger btn-floating">
+                                    <i class="fab fa-google"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center text-muted mx-3 mb-0">or</p>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-floating mb-3">
+                            <input type="email" id="registerEmail" name="email" class="form-control" placeholder="Email" required />
+                            <label for="registerEmail">Email</label>
+                            <small class="text-muted">Use your university email (e.g., name@stu.ncu.edu.jm)</small>
+                        </div>
+
+                        <!-- Dynamic Fields -->
+                        <div id="studentFields">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="registerFirstname" name="first_name" class="form-control" placeholder="First Name" />
+                                <label for="registerFirstname">First Name</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" id="registerLastname" name="last_name" class="form-control" placeholder="Last Name" />
+                                <label for="registerLastname">Last Name</label>
+                            </div>
+                        </div>
+
+                        <div id="hostFields" style="display: none;">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="registerHostName" name="host_name" class="form-control" placeholder="Department/Host Name" />
+                                <label for="registerHostName">Department/Host Name</label>
+                            </div>
+                        </div>
+
+                        <!-- Common Fields -->
+                        <div class="form-floating mb-3">
+                            <input type="text" id="registerUserName" name="username" class="form-control" placeholder="Username" required />
+                            <label for="registerUserName">Username</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" id="registerPassword" name="password" class="form-control" placeholder="Password" required />
+                            <label for="registerPassword">Password</label>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            <input type="password" id="registerConfirmPassword" name="confirm_password" class="form-control" placeholder="Confirm Password" required />
+                            <label for="registerConfirmPassword">Confirm Password</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="registerDepartment" class="form-label">Department</label>
+                            <select id="registerDepartment" name="department" class="form-select" required>
+                                <option value="" disabled selected>Select department</option>
+                                <option value="School of Nursing">School of Nursing</option>
+                                <option value="Department of Medical Technology">Department of Medical Technology</option>
+                                <option value="Department of Computer Information Science">Department of Computer Information Science</option>
+                                <option value="Department of Biology, Chemistry, Environmental Science">Department of Biology, Chemistry, Environmental Science</option>
+                                <option value="Department of Mathematics & Engineering">Department of Mathematics & Engineering</option>
+                                <option value="Department of Dietetics, Nutrition and Food Science">Department of Dietetics, Nutrition and Food Science</option>
+                                <option value="Department of Dental Hygiene">Department of Dental Hygiene</option>
+                                <option value="Department of Communication Studies">Department of Communication Studies</option>
+                                <option value="Department of Music & Fine Arts">Department of Music & Fine Arts</option>
+                                <option value="Department of Teacher Education">Department of Teacher Education</option>
+                                <option value="Department of Graduate Education & Leadership">Department of Graduate Education & Leadership</option>
+                                <option value="Department of Business Management & Hospitality">Department of Business Management & Hospitality</option>
+                                <option value="School of Religion & Theology">School of Religion & Theology</option>
+                                <option value="Department of Social Work">Department of Social Work</option>
+                                <option value="Department of Criminal Justice">Department of Criminal Justice</option>
+                                <option value="Department of Humanities">Department of Humanities</option>
+                                <option value="Department of General Studies">Department of General Studies</option>
+                                <option value="Administrative Department">Administrative Department</option>
+                            </select>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="registerCheck" required />
+                            <label class="form-check-label" for="registerCheck" style="color: rgb(68, 68, 68);" >I agree to the <a href="#" class="text-primary">Terms and Conditions</a>
+                            </label>
+                        </div>
+
+                        <div class="text-center mb-3">
+                            <button type="submit" class="btn btn-primary">
+                                Create Account
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <p style="color: rgb(68, 68, 68);">Already have an account? <a href="#pills-login" data-bs-toggle="pill" class="text-primary fw-bold">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Footer -->
+ <footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-0">© 2025 Event Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Validation JavaScript  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const registerTab = document.getElementById("tab-register");
+            const registerForm = document.querySelector("#pills-register form");
+    
+            registerTab.addEventListener("click", function () {
+                registerForm.reset(); // Reset form fields when switching back
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("registerEmail");
+    const studentFields = document.getElementById("studentFields");
+    const hostFields = document.getElementById("hostFields");
+    const firstNameInput = document.getElementById("registerFirstname");
+    const lastNameInput = document.getElementById("registerLastname");
+    const hostNameInput = document.getElementById("registerHostName");
+
+    emailInput.addEventListener("input", function () {
+        const email = emailInput.value.trim();
+        if (email.endsWith("@stu.ncu.edu.jm")) {
+            // Student registration
+            studentFields.style.display = "block";
+            hostFields.style.display = "none";
+            firstNameInput.required = true;
+            lastNameInput.required = true;
+            hostNameInput.required = false;
+        } else if (email.endsWith("@ncu.edu.jm")) {
+            // Host/Department registration
+            studentFields.style.display = "none";
+            hostFields.style.display = "block";
+            firstNameInput.required = false;
+            lastNameInput.required = false;
+            hostNameInput.required = true;
+        } else {
+            // Default to student registration
+            studentFields.style.display = "block";
+            hostFields.style.display = "none";
+            firstNameInput.required = true;
+            lastNameInput.required = true;
+            hostNameInput.required = false;
+        }
+    });
+});
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const registrationForm = document.getElementById("registrationForm");
+        const passwordInput = document.getElementById("registerPassword");
+        const confirmPasswordInput = document.getElementById("registerConfirmPassword");
+
+        registrationForm.addEventListener("submit", function (event) {
+            // Validate password match
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert("Passwords do not match. Please check and try again.");
+                event.preventDefault(); // Prevent form submission
+                confirmPasswordInput.focus(); // Focus on the confirm password field
+                return false;
+            }
+
+            // Additional validation (password strength)
+            if (passwordInput.value.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                event.preventDefault();
+                passwordInput.focus();
+                return false;
+            }
+        });
+    });
+
+    function validatePasswordStrength(password) {
+        const minLength = 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        return (
+            password.length >= minLength &&
+            hasUpperCase &&
+            hasLowerCase &&
+            hasNumber &&
+            hasSpecialChar
+        );
+    }
+
+    registrationForm.addEventListener("submit", function (event) {
+        const password = passwordInput.value;
+
+        if (!validatePasswordStrength(password)) {
+            alert("Password must be at least 8 characters long and include uppercase, lowercase, numbers, and special characters.");
+            event.preventDefault();
+            passwordInput.focus();
+            return false;
+        }
+    });
+
+    </script>
+
+</body>
+</html>

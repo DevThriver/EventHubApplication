@@ -1,0 +1,75 @@
+/* Background image with overlay */
+.hero-section {
+    background:url('../images/landingpage_bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 200px 0;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: transparent;
+    transition: all 0.3s;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    background-color: #343a40 !important;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.btn-register {
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section padding */
+section {
+    padding: 100px 0;
+}
+
+/* About section styling */
+#about {
+    background-color: #f8f9fa;
+}
+
+/* Contact section styling */
+#contact {
+    background-color: #ffffff;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 150px 0;
+        min-height: auto;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+/* Bootstrap icon adjustments */
+.bi {
+    vertical-align: -.125em;
+}

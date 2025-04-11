@@ -1,0 +1,218 @@
+body {
+    background-color: #e5f1fd;
+    padding-top: 56px;
+    min-height: 100vh;
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    margin-top: 1rem;
+}
+
+.post-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 2rem;
+}
+
+.post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Like Button with Text */
+.btn-like {
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-like:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-like.active {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.btn-like i {
+    transition: all 0.3s ease;
+}
+
+.btn-like.active i {
+    color: #dc3545;
+    animation: heartBeat 0.5s;
+}
+
+/* RSVP Button with Text */
+.btn-rsvp {
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-rsvp:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-rsvp.active {
+    color: #0d6efd;
+    border-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.btn-rsvp i {
+    transition: all 0.3s ease;
+}
+
+.btn-rsvp.active i {
+    color: #0d6efd;
+    animation: bounce 0.5s;
+}
+
+/* Animations */
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Button container */
+.interaction-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.empty-state {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .post-image {
+        height: 200px;
+    }
+    
+    .welcome-banner {
+        padding: 1.5rem;
+    }
+    
+    .welcome-banner h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Interests Modal Styles */
+    .interests-modal {
+        z-index: 1060;
+    }
+    .interest-item {
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 1px solid #dee2e6;
+    }
+    .interest-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .interest-item.selected {
+        background-color: #e9f5ff;
+        border-color: #86b7fe;
+    }
+    .interest-checkbox {
+        margin-right: 12px;
+    }
+    .interest-icon {
+        width: 24px;
+        text-align: center;
+        margin-right: 12px;
+        color: #0d6efd;
+    }
+    
+    /* Responsive Update Interests Button */
+    .update-interests-btn {
+        position: relative;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        width: 100%;
+        color: white;
+        border-color: white;
+    }
+    
+    @media (min-width: 768px) {
+        .update-interests-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: auto;
+            margin-top: 0;
+        }
+    }

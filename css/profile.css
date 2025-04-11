@@ -1,0 +1,164 @@
+
+body {
+    background-color: #e5f1fd;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-banner {
+    height: 250px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    position: relative;
+    top: -75px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.profile-info h1 {
+    margin: 10px 0 5px;
+    font-size: 32px;
+    color: #333;
+    font-weight: 600;
+}
+
+.profile-info .department {
+    color: #777;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.edit-profile-btn {
+    background-color: #1a6df2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-profile-btn:hover {
+    background-color: #2575fc;
+    transform: translateY(-3px);
+}
+
+
+
+/* Bio Section */
+.bio-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.bio-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.bio-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Interests Section */
+.interests-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1.2s ease-in-out;
+}
+
+.interests-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-banner {
+        height: 200px;
+    }
+
+    .profile-info {
+        top: -50px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info h1 {
+        font-size: 28px;
+    }
+
+    .profile-info .department {
+        font-size: 16px;
+    }
+
+    .bio-section, .interests-section {
+        padding: 20px;
+    }
+}
